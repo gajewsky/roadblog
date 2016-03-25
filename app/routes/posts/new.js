@@ -10,4 +10,4 @@ export default Ember.Route.extend({
       model.save().then(() => this.transitionTo('posts.index'));
     }
   }
-})
+});

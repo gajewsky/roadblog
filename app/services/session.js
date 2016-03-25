@@ -21,7 +21,7 @@ export default Ember.Service.extend({
     }).done((response) => {
       this.pushCurrentUser(response.user);
       var authToken = response.user.auth_token;
-      Ember.$.ajaxPrefilter('+*', function(options, originalOptions, xhr) {
+      Ember.$.ajaxPrefilter('+*', function(options) {
         options.headers = { 'X-Token': authToken };
         return true;
       });
