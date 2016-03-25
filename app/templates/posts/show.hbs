@@ -1,8 +1,33 @@
-<h3>{{model.title}}</h3>
-<p>{{model.body}}</p>
-<div>{{model.createdAt}}</div>
-<ul>
-{{#each model.comments as |comment|}}
-  <li>{{comment.body}} @ {{comment.createdAt}}</li>
-{{/each}}
-</ul>
+
+<div class="container">
+  <div class="row">
+    <h3>{{model.title}}</h3>
+    <p>{{model.body}}</p>
+    <div>{{model.createdAt}}</div>
+  </div>
+  {{#each model.comments as |comment|}}
+    <div class="row">
+      <div class="col-sm-12">
+
+      </div><!-- /col-sm-12 -->
+    </div><!-- /row -->
+    <div class="row">
+      <div class="col-sm-1">
+        <div class="thumbnail">
+          <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+        </div><!-- /thumbnail -->
+      </div><!-- /col-sm-1 -->
+
+      <div class="col-sm-5">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <strong>nickname</strong> <span class="text-muted">{{comment.createdAt}}</span>
+          </div>
+          <div class="panel-body">
+            {{comment.body}}
+          </div><!-- /panel-body -->
+        </div><!-- /panel panel-default -->
+      </div><!-- /col-sm-5 -->
+    </div><!-- /row -->
+  {{/each}}
+</div><!-- /container -->
