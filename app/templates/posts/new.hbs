@@ -1,4 +1,19 @@
-<h3>New</h3>
-<p>{{input value=model.title}}</p>
-<p>{{textarea value=model.body}}</p>
-<button {{action 'save' model}}>Save</button>
+<div class="form-horizontal">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Title</label>
+        <div class="col-sm-6">
+            {{input type="text" value=model.title class="form-control" placeholder="Post title"}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Body</label>
+        <div class="col-sm-6">
+            {{textarea value=model.body class="form-control" placeholder="The body of your post"}}
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-6">
+            <button type="submit" class="btn btn-default" {{action 'savePost' model}}>Add post</button>
+        </div>
+    </div>
+</div>

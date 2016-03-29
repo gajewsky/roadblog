@@ -1,13 +1,19 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model: function() {
-    return this.store.createRecord('post', {});
+
+  model() {
+    return this.store.createRecord('post');
   },
 
   actions: {
-    save: function(model) {
-      model.save().then(() => this.transitionTo('posts.index'));
+
+    savePost(newPost) {
+      newPost.save().then(() => this.transitionTo('posts'));
+    },
+
+    willTransition() {
+      this.controller.get('model').rollbackAttributes();
     }
   }
 });
