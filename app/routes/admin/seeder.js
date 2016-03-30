@@ -6,7 +6,7 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       posts: this.store.findAll('post'),
       comments: this.store.peekAll('comment')
-    })
+    });
   },
 
   setupController(controller, model) {
