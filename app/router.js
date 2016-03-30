@@ -14,6 +14,10 @@ Router.map(function() {
 
   this.route('sign-in');
   this.route('sign-out');
+
+  this.route('admin', function() {
+    this.route('seeder');
+  });
 });
 
 export default Router;
