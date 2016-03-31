@@ -6,7 +6,10 @@
       <div class="form-horizontal">
         <label class="col-sm-2 control-label">Number of new records:</label>
         <div class="col-sm-2">
-          {{input value=counter class='form-control'}}
+          {{#liquid-if isCounterHigh class='high-level'}}
+            <span class="label label-danger">Watch out! Isn't it to many? It can kill your browser!</span>
+          {{/liquid-if}}
+          {{input value=counter class='form-control' key-down="updateCounter"}}
         </div>
         <div class="col-sm-4">
           <button class="btn btn-primary" {{action 'generateAction'}}>Generate {{sectionTitle}}</button>
